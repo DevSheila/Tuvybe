@@ -63,7 +63,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         if(v == mSignInTextView){
-            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
