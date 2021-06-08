@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TuVybe">
+        <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,8 +22,9 @@
             android:theme="@style/Theme.TuVybe">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.tuvybe.LoginActivity"></meta-data>
+                android:value="com.example.tuvybe.LoginActivity" />
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
