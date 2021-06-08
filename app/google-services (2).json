@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "833494934879",
+    "project_id": "tuvybe-a6d93",
+    "storage_bucket": "tuvybe-a6d93.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833494934879:android:1b2e123532b86c937c02ea",
+        "android_client_info": {
+          "package_name": "com.example.tuvybe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833494934879-l0lru5lgbv6hq77s4355gs4rsedt31hc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tuvybe",
+            "certificate_hash": "437f4d0468d60b6e7e99fcca4c39b61b7585efff"
+          }
+        },
+        {
+          "client_id": "833494934879-q8di8li46iobo0apnbimqcqvfjfbejvt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFyIELMkVUsLF0yWeURS7L9I2rwUbZV3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "833494934879-q8di8li46iobo0apnbimqcqvfjfbejvt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
