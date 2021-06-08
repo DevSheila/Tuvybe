@@ -59,14 +59,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="145dp"
         android:layout_marginLeft="145dp"
+        android:layout_marginTop="58dp"
         android:layout_marginEnd="145dp"
         android:layout_marginRight="145dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="92dp"
         android:backgroundTint="#0AD698"
         android:fontFamily="@font/bangers"
         android:text="GET STARTED"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appAbout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

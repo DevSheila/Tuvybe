@@ -2,7 +2,9 @@ package com.example.tuvybe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     //animation variables
     Animation topAnim,bottomAnim;
+    private static int SPLASH_SCREEN=5000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,16 @@ public class MainActivity extends AppCompatActivity {
         mAppTitle.setAnimation(topAnim);
         mAppAbout.setAnimation(bottomAnim);
         mSplashButton.setAnimation(bottomAnim);
+
+        new Handler().postDelayed(new Runnable(){
+            @Override
+            public void run() {
+                Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                startActivity(intent);
+                finish();//remove activity from activity stack
+
+            }
+        }, SPLASH_SCREEN);
 
 
     }
