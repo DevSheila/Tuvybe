@@ -97,6 +97,7 @@ dependencies {
     implementation 'com.daimajia.androidanimations:library:2.4@aar'
 
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
 }
 
 apply plugin: 'com.google.gms.google-services'
