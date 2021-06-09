@@ -38,8 +38,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.signInButton)
     Button mSignInButton;
 
-
-
     //animation variables
     Animation topAnim, bottomAnim;
 
