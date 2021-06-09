@@ -12,13 +12,13 @@ public class End {
 
     @SerializedName("timezone")
     @Expose
-    public String timezone;
+    private String timezone;
     @SerializedName("local")
     @Expose
-    public String local;
+    private String local;
     @SerializedName("utc")
     @Expose
-    public String utc;
+    private String utc;
 
     /**
      * No args constructor for use in serialization
@@ -37,6 +37,30 @@ public class End {
         super();
         this.timezone = timezone;
         this.local = local;
+        this.utc = utc;
+    }
+
+    public String getTimezone() {
+        return timezone;
+    }
+
+    public void setTimezone(String timezone) {
+        this.timezone = timezone;
+    }
+
+    public String getLocal() {
+        return local;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
+    }
+
+    public String getUtc() {
+        return utc;
+    }
+
+    public void setUtc(String utc) {
         this.utc = utc;
     }
 

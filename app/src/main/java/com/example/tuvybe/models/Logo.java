@@ -2,8 +2,6 @@
 package com.example.tuvybe.models;
 
 //import javax.annotation.Generated;
-
-import com.example.tuvybe.models.Original;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -14,25 +12,25 @@ public class Logo {
 
     @SerializedName("crop_mask")
     @Expose
-    public CropMask cropMask;
+    private CropMask cropMask;
     @SerializedName("original")
     @Expose
-    public Original original;
+    private Original original;
     @SerializedName("id")
     @Expose
-    public String id;
+    private String id;
     @SerializedName("url")
     @Expose
-    public String url;
+    private String url;
     @SerializedName("aspect_ratio")
     @Expose
-    public String aspectRatio;
+    private String aspectRatio;
     @SerializedName("edge_color")
     @Expose
-    public String edgeColor;
+    private String edgeColor;
     @SerializedName("edge_color_set")
     @Expose
-    public Boolean edgeColorSet;
+    private Boolean edgeColorSet;
 
     /**
      * No args constructor for use in serialization
@@ -59,6 +57,62 @@ public class Logo {
         this.url = url;
         this.aspectRatio = aspectRatio;
         this.edgeColor = edgeColor;
+        this.edgeColorSet = edgeColorSet;
+    }
+
+    public CropMask getCropMask() {
+        return cropMask;
+    }
+
+    public void setCropMask(CropMask cropMask) {
+        this.cropMask = cropMask;
+    }
+
+    public Original getOriginal() {
+        return original;
+    }
+
+    public void setOriginal(Original original) {
+        this.original = original;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getAspectRatio() {
+        return aspectRatio;
+    }
+
+    public void setAspectRatio(String aspectRatio) {
+        this.aspectRatio = aspectRatio;
+    }
+
+    public String getEdgeColor() {
+        return edgeColor;
+    }
+
+    public void setEdgeColor(String edgeColor) {
+        this.edgeColor = edgeColor;
+    }
+
+    public Boolean getEdgeColorSet() {
+        return edgeColorSet;
+    }
+
+    public void setEdgeColorSet(Boolean edgeColorSet) {
         this.edgeColorSet = edgeColorSet;
     }
 

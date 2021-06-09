@@ -2,10 +2,6 @@
 package com.example.tuvybe.models;
 
 //import javax.annotation.Generated;
-
-import com.example.tuvybe.models.Logo;
-import com.example.tuvybe.models.Name;
-import com.example.tuvybe.models.Start;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -16,136 +12,136 @@ public class EventsSearchResponse {
 
     @SerializedName("name")
     @Expose
-    public Name name;
+    private Name name;
     @SerializedName("description")
     @Expose
-    public Description description;
+    private Description description;
     @SerializedName("url")
     @Expose
-    public String url;
+    private String url;
     @SerializedName("start")
     @Expose
-    public Start start;
+    private Start start;
     @SerializedName("end")
     @Expose
-    public End end;
+    private End end;
     @SerializedName("organization_id")
     @Expose
-    public String organizationId;
+    private String organizationId;
     @SerializedName("created")
     @Expose
-    public String created;
+    private String created;
     @SerializedName("changed")
     @Expose
-    public String changed;
+    private String changed;
     @SerializedName("published")
     @Expose
-    public String published;
+    private String published;
     @SerializedName("capacity")
     @Expose
-    public Object capacity;
+    private Object capacity;
     @SerializedName("capacity_is_custom")
     @Expose
-    public Object capacityIsCustom;
+    private Object capacityIsCustom;
     @SerializedName("status")
     @Expose
-    public String status;
+    private String status;
     @SerializedName("currency")
     @Expose
-    public String currency;
+    private String currency;
     @SerializedName("listed")
     @Expose
-    public Boolean listed;
+    private Boolean listed;
     @SerializedName("shareable")
     @Expose
-    public Boolean shareable;
+    private Boolean shareable;
     @SerializedName("online_event")
     @Expose
-    public Boolean onlineEvent;
+    private Boolean onlineEvent;
     @SerializedName("tx_time_limit")
     @Expose
-    public Integer txTimeLimit;
+    private Integer txTimeLimit;
     @SerializedName("hide_start_date")
     @Expose
-    public Boolean hideStartDate;
+    private Boolean hideStartDate;
     @SerializedName("hide_end_date")
     @Expose
-    public Boolean hideEndDate;
+    private Boolean hideEndDate;
     @SerializedName("locale")
     @Expose
-    public String locale;
+    private String locale;
     @SerializedName("is_locked")
     @Expose
-    public Boolean isLocked;
+    private Boolean isLocked;
     @SerializedName("privacy_setting")
     @Expose
-    public String privacySetting;
+    private String privacySetting;
     @SerializedName("is_series")
     @Expose
-    public Boolean isSeries;
+    private Boolean isSeries;
     @SerializedName("is_series_parent")
     @Expose
-    public Boolean isSeriesParent;
+    private Boolean isSeriesParent;
     @SerializedName("inventory_type")
     @Expose
-    public String inventoryType;
+    private String inventoryType;
     @SerializedName("is_reserved_seating")
     @Expose
-    public Boolean isReservedSeating;
+    private Boolean isReservedSeating;
     @SerializedName("show_pick_a_seat")
     @Expose
-    public Boolean showPickASeat;
+    private Boolean showPickASeat;
     @SerializedName("show_seatmap_thumbnail")
     @Expose
-    public Boolean showSeatmapThumbnail;
+    private Boolean showSeatmapThumbnail;
     @SerializedName("show_colors_in_seatmap_thumbnail")
     @Expose
-    public Boolean showColorsInSeatmapThumbnail;
+    private Boolean showColorsInSeatmapThumbnail;
     @SerializedName("source")
     @Expose
-    public String source;
+    private String source;
     @SerializedName("is_free")
     @Expose
-    public Boolean isFree;
+    private Boolean isFree;
     @SerializedName("version")
     @Expose
-    public Object version;
+    private Object version;
     @SerializedName("summary")
     @Expose
-    public String summary;
+    private String summary;
     @SerializedName("logo_id")
     @Expose
-    public String logoId;
+    private String logoId;
     @SerializedName("organizer_id")
     @Expose
-    public String organizerId;
+    private String organizerId;
     @SerializedName("venue_id")
     @Expose
-    public Object venueId;
+    private Object venueId;
     @SerializedName("category_id")
     @Expose
-    public String categoryId;
+    private String categoryId;
     @SerializedName("subcategory_id")
     @Expose
-    public String subcategoryId;
+    private String subcategoryId;
     @SerializedName("format_id")
     @Expose
-    public String formatId;
+    private String formatId;
     @SerializedName("id")
     @Expose
-    public String id;
+    private String id;
     @SerializedName("resource_uri")
     @Expose
-    public String resourceUri;
+    private String resourceUri;
     @SerializedName("is_externally_ticketed")
     @Expose
-    public Boolean isExternallyTicketed;
+    private Boolean isExternallyTicketed;
     @SerializedName("series_id")
     @Expose
-    public String seriesId;
+    private String seriesId;
     @SerializedName("logo")
     @Expose
-    public Logo logo;
+    private Logo logo;
 
     /**
      * No args constructor for use in serialization
@@ -246,6 +242,358 @@ public class EventsSearchResponse {
         this.resourceUri = resourceUri;
         this.isExternallyTicketed = isExternallyTicketed;
         this.seriesId = seriesId;
+        this.logo = logo;
+    }
+
+    public Name getName() {
+        return name;
+    }
+
+    public void setName(Name name) {
+        this.name = name;
+    }
+
+    public Description getDescription() {
+        return description;
+    }
+
+    public void setDescription(Description description) {
+        this.description = description;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public Start getStart() {
+        return start;
+    }
+
+    public void setStart(Start start) {
+        this.start = start;
+    }
+
+    public End getEnd() {
+        return end;
+    }
+
+    public void setEnd(End end) {
+        this.end = end;
+    }
+
+    public String getOrganizationId() {
+        return organizationId;
+    }
+
+    public void setOrganizationId(String organizationId) {
+        this.organizationId = organizationId;
+    }
+
+    public String getCreated() {
+        return created;
+    }
+
+    public void setCreated(String created) {
+        this.created = created;
+    }
+
+    public String getChanged() {
+        return changed;
+    }
+
+    public void setChanged(String changed) {
+        this.changed = changed;
+    }
+
+    public String getPublished() {
+        return published;
+    }
+
+    public void setPublished(String published) {
+        this.published = published;
+    }
+
+    public Object getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Object capacity) {
+        this.capacity = capacity;
+    }
+
+    public Object getCapacityIsCustom() {
+        return capacityIsCustom;
+    }
+
+    public void setCapacityIsCustom(Object capacityIsCustom) {
+        this.capacityIsCustom = capacityIsCustom;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public Boolean getListed() {
+        return listed;
+    }
+
+    public void setListed(Boolean listed) {
+        this.listed = listed;
+    }
+
+    public Boolean getShareable() {
+        return shareable;
+    }
+
+    public void setShareable(Boolean shareable) {
+        this.shareable = shareable;
+    }
+
+    public Boolean getOnlineEvent() {
+        return onlineEvent;
+    }
+
+    public void setOnlineEvent(Boolean onlineEvent) {
+        this.onlineEvent = onlineEvent;
+    }
+
+    public Integer getTxTimeLimit() {
+        return txTimeLimit;
+    }
+
+    public void setTxTimeLimit(Integer txTimeLimit) {
+        this.txTimeLimit = txTimeLimit;
+    }
+
+    public Boolean getHideStartDate() {
+        return hideStartDate;
+    }
+
+    public void setHideStartDate(Boolean hideStartDate) {
+        this.hideStartDate = hideStartDate;
+    }
+
+    public Boolean getHideEndDate() {
+        return hideEndDate;
+    }
+
+    public void setHideEndDate(Boolean hideEndDate) {
+        this.hideEndDate = hideEndDate;
+    }
+
+    public String getLocale() {
+        return locale;
+    }
+
+    public void setLocale(String locale) {
+        this.locale = locale;
+    }
+
+    public Boolean getIsLocked() {
+        return isLocked;
+    }
+
+    public void setIsLocked(Boolean isLocked) {
+        this.isLocked = isLocked;
+    }
+
+    public String getPrivacySetting() {
+        return privacySetting;
+    }
+
+    public void setPrivacySetting(String privacySetting) {
+        this.privacySetting = privacySetting;
+    }
+
+    public Boolean getIsSeries() {
+        return isSeries;
+    }
+
+    public void setIsSeries(Boolean isSeries) {
+        this.isSeries = isSeries;
+    }
+
+    public Boolean getIsSeriesParent() {
+        return isSeriesParent;
+    }
+
+    public void setIsSeriesParent(Boolean isSeriesParent) {
+        this.isSeriesParent = isSeriesParent;
+    }
+
+    public String getInventoryType() {
+        return inventoryType;
+    }
+
+    public void setInventoryType(String inventoryType) {
+        this.inventoryType = inventoryType;
+    }
+
+    public Boolean getIsReservedSeating() {
+        return isReservedSeating;
+    }
+
+    public void setIsReservedSeating(Boolean isReservedSeating) {
+        this.isReservedSeating = isReservedSeating;
+    }
+
+    public Boolean getShowPickASeat() {
+        return showPickASeat;
+    }
+
+    public void setShowPickASeat(Boolean showPickASeat) {
+        this.showPickASeat = showPickASeat;
+    }
+
+    public Boolean getShowSeatmapThumbnail() {
+        return showSeatmapThumbnail;
+    }
+
+    public void setShowSeatmapThumbnail(Boolean showSeatmapThumbnail) {
+        this.showSeatmapThumbnail = showSeatmapThumbnail;
+    }
+
+    public Boolean getShowColorsInSeatmapThumbnail() {
+        return showColorsInSeatmapThumbnail;
+    }
+
+    public void setShowColorsInSeatmapThumbnail(Boolean showColorsInSeatmapThumbnail) {
+        this.showColorsInSeatmapThumbnail = showColorsInSeatmapThumbnail;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public Boolean getIsFree() {
+        return isFree;
+    }
+
+    public void setIsFree(Boolean isFree) {
+        this.isFree = isFree;
+    }
+
+    public Object getVersion() {
+        return version;
+    }
+
+    public void setVersion(Object version) {
+        this.version = version;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+    public String getLogoId() {
+        return logoId;
+    }
+
+    public void setLogoId(String logoId) {
+        this.logoId = logoId;
+    }
+
+    public String getOrganizerId() {
+        return organizerId;
+    }
+
+    public void setOrganizerId(String organizerId) {
+        this.organizerId = organizerId;
+    }
+
+    public Object getVenueId() {
+        return venueId;
+    }
+
+    public void setVenueId(Object venueId) {
+        this.venueId = venueId;
+    }
+
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public String getSubcategoryId() {
+        return subcategoryId;
+    }
+
+    public void setSubcategoryId(String subcategoryId) {
+        this.subcategoryId = subcategoryId;
+    }
+
+    public String getFormatId() {
+        return formatId;
+    }
+
+    public void setFormatId(String formatId) {
+        this.formatId = formatId;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getResourceUri() {
+        return resourceUri;
+    }
+
+    public void setResourceUri(String resourceUri) {
+        this.resourceUri = resourceUri;
+    }
+
+    public Boolean getIsExternallyTicketed() {
+        return isExternallyTicketed;
+    }
+
+    public void setIsExternallyTicketed(Boolean isExternallyTicketed) {
+        this.isExternallyTicketed = isExternallyTicketed;
+    }
+
+    public String getSeriesId() {
+        return seriesId;
+    }
+
+    public void setSeriesId(String seriesId) {
+        this.seriesId = seriesId;
+    }
+
+    public Logo getLogo() {
+        return logo;
+    }
+
+    public void setLogo(Logo logo) {
         this.logo = logo;
     }
 

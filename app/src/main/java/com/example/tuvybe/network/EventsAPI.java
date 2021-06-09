@@ -8,5 +8,5 @@ import retrofit2.http.Query;
 
 public interface EventsAPI {
     @GET("events")
-    Call<EventsSearchResponse> getEvents( @Query("event_id") String id,@Query("api_key") String key);
+    Call<EventsSearchResponse> getEvents( @Query("event_id") String id,@Query("key") String key);
 }

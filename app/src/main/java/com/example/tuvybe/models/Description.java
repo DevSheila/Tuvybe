@@ -12,10 +12,10 @@ public class Description {
 
     @SerializedName("text")
     @Expose
-    public String text;
+    private String text;
     @SerializedName("html")
     @Expose
-    public String html;
+    private String html;
 
     /**
      * No args constructor for use in serialization
@@ -32,6 +32,22 @@ public class Description {
     public Description(String text, String html) {
         super();
         this.text = text;
+        this.html = html;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getHtml() {
+        return html;
+    }
+
+    public void setHtml(String html) {
         this.html = html;
     }
 
