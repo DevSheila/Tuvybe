@@ -98,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
                 Toast.makeText(RegisterActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                Intent intent = new Intent(RegisterActivity.this, EventsActivity.class);
 //                intent.putExtra("username",name );
                 startActivity(intent);
             } else {

@@ -38,6 +38,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.signInButton)
     Button mSignInButton;
 
+
+
     //animation variables
     Animation topAnim, bottomAnim;
 
@@ -110,7 +112,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         String id = mAuth.getCurrentUser().getUid();
                         String uName = mAuth.getCurrentUser().getDisplayName();
                         DatabaseReference username = databaseUsers.child(id).child("username");
-                        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, EventsActivity.class);
                         intent.putExtra("username", uName);
                         Log.d("namee",uName);
                         startActivity(intent);
