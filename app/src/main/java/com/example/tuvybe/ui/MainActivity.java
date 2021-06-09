@@ -1,4 +1,4 @@
-package com.example.tuvybe;
+package com.example.tuvybe.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.tuvybe.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                Intent intent = new Intent(getApplicationContext(),RegisterActivity.class);
+                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(intent);
                 finish();//remove activity from activity stack
 

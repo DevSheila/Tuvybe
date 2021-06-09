@@ -1,8 +1,10 @@
-package com.example.tuvybe;
+package com.example.tuvybe.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.tuvybe.R;
 
 public class EventsActivity extends AppCompatActivity {
 
