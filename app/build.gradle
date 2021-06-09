@@ -35,7 +35,7 @@ android {
         }
     }
     buildTypes.each {
-        it.buildConfigField 'String', 'EVENT_BRITE_API_KEY', GiantBombApiKey
+        it.buildConfigField 'String', 'EVENT_BRITE_API_KEY', EventBriteApiKey
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
