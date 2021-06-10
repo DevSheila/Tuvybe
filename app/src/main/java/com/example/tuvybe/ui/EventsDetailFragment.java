@@ -2,7 +2,9 @@ package com.example.tuvybe.ui;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,8 +27,14 @@ import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,6 +46,8 @@ public class EventsDetailFragment extends Fragment implements View.OnClickListen
     TextView mNameLabel;
     @BindView(R.id.descriptionTextView)
     TextView mDescriptionLabel;
+    @BindView(R.id.eventTime)
+    TextView mEventTime;
 
 
 
@@ -63,6 +74,7 @@ public static EventsDetailFragment newInstance(EventsSearchResponse event) {
                 assert getArguments() != null;
                 mEvent = Parcels.unwrap(getArguments().getParcelable("event"));
         }
+        @RequiresApi(api = Build.VERSION_CODES.O)
         @Override
 
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -75,6 +87,8 @@ public static EventsDetailFragment newInstance(EventsSearchResponse event) {
                 mNameLabel.setText(mEvent.getName().getText());
                 mDescriptionLabel.setText(mEvent.getDescription().getText());
 
+
+                mEventTime.setText(mEvent.getStart().getLocal());
 
                 return view;
         }
