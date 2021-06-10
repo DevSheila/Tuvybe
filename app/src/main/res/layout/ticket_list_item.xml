@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:text="username"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
         <TextView
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:text="Email"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/eventId"
@@ -48,16 +48,50 @@
             android:layout_height="wrap_content"
             android:text="event Id"
             android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textSize="16dp"
+           />
+        <TextView
+            android:id="@+id/eventName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="event Name"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            />
 
         <TextView
             android:id="@+id/numTickets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="NumTickets"
+            android:textColor="#0AD698"
+            android:textSize="16dp"
+            android:textStyle="bold"
+             />
+        <TextView
+            android:id="@+id/eventStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
             android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="italic" />
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/eventEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="End"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            />
+
+        <TextView
+            android:id="@+id/eventUrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="event Link"
+            android:textColor="#0AD698"
+            android:textSize="16dp"
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

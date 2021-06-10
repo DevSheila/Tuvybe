@@ -102,9 +102,11 @@ public static EventsDetailFragment newInstance(EventsSearchResponse event) {
                 Picasso.get().load(mEvent.getLogo().getOriginal().getUrl()).into(mImageLabel);
                 mNameLabel.setText(mEvent.getName().getText());
                 mDescriptionLabel.setText(mEvent.getDescription().getText());
+                mEventBriteLabel.setText(mEvent.getUrl());
 
 
-                mEventTime.setText(mEvent.getStart().getLocal());
+
+            mEventTime.setText(mEvent.getStart().getLocal());
                 mEventBriteLabel.setOnClickListener(this);
                 mFavouritesLabel.setOnClickListener(this);
                 mAttendButton.setOnClickListener(this);

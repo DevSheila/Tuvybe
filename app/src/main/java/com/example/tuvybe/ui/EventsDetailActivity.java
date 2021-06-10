@@ -64,9 +64,15 @@ public class EventsDetailActivity extends AppCompatActivity implements TicketsAc
         mEventsList= Parcels.unwrap(getIntent().getParcelableExtra("events"));
         int startingPosition = getIntent().getIntExtra("position",0);
         String eventId =mEventsList.get(startingPosition).getId();
+        String eventName =mEventsList.get(startingPosition).getName().getText();
+        String eventStart =mEventsList.get(startingPosition).getStart().getLocal();
+        String eventEnd=mEventsList.get(startingPosition).getEnd().getLocal();
+        String eventPlace =mEventsList.get(startingPosition).getUrl();
 
 
-        mTicket=new Ticket(eventId,num_tickets,uid,username,useremail);
+
+
+        mTicket=new Ticket(num_tickets,uid,username,useremail,eventId,eventName,eventStart,eventEnd,eventPlace);
 
 
         DatabaseReference reviewsRef = FirebaseDatabase

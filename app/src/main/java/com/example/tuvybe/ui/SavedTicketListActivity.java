@@ -22,6 +22,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -64,6 +66,7 @@ public class SavedTicketListActivity extends AppCompatActivity {
 
             @Override
             protected void onBindViewHolder(@NonNull FirebaseTicketViewHolder firebaseTicketViewHolder, int position, @NonNull Ticket ticket) {
+
                 firebaseTicketViewHolder.bindReview(ticket);
             }
 

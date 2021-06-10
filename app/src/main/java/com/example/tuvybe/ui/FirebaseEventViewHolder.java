@@ -39,11 +39,14 @@ public class FirebaseEventViewHolder  extends RecyclerView.ViewHolder implements
         ImageView eventImageView = (ImageView) mView.findViewById(R.id.eventImageView);
         TextView nameTextView = (TextView) mView.findViewById(R.id.eventNameTextView);
         TextView eventTimeTextView = (TextView) mView.findViewById(R.id.eventTimeTextView);
+//        TextView eventBriteTextView = (TextView) mView.findViewById(R.id.viewOnEventBrite);
+
 
 
         Picasso.get().load(mEvent.getLogo().getOriginal().getUrl()).into(eventImageView);
         nameTextView.setText(mEvent.getName().getText());
         eventTimeTextView.setText(mEvent.getStart().getLocal());
+//        eventBriteTextView.setText(mEvent.getUrl());
 
     }
 

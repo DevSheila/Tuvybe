@@ -43,11 +43,21 @@ public class FirebaseTicketViewHolder extends RecyclerView.ViewHolder{
         TextView emailTextView = (TextView) mView.findViewById(R.id.userEmail);
         TextView ticketsTextView = (TextView) mView.findViewById(R.id.numTickets);
 
-        userNameTextView.setText(ticket.getUserName());
-        emailTextView.setText(ticket.getUserEmail());
-        eventIdTextView.setText(ticket.getEventId());
-        ticketsTextView.setText(ticket.getNum_tickets());
 
+        TextView eventName= (TextView) mView.findViewById(R.id.eventName);
+        TextView eventStart= (TextView) mView.findViewById(R.id.eventStart);
+        TextView eventEnd = (TextView) mView.findViewById(R.id.eventEnd);
+        TextView eventUrl = (TextView) mView.findViewById(R.id.eventUrl);
+
+        userNameTextView.setText("Username: "+ticket.getUserName());
+        emailTextView.setText("Email: " +ticket.getUserEmail());
+        ticketsTextView.setText("No Tickets: "+ticket.getNum_tickets());
+
+        eventIdTextView.setText("Event Id: "+ ticket.getEventId());
+        eventName.setText("Event Name: "+ticket.getEventName());
+        eventStart.setText("Start: "+ticket.getEventStart());
+        eventEnd.setText("End: "+ticket.getEventEnd());
+        eventUrl.setText(ticket.getEventPlace());
     }
     public void firebaseAdd(){
         final ArrayList<Ticket> ticketList = new ArrayList<>();
