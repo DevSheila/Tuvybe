@@ -61,16 +61,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if (user != null) {
 
 
-//                    Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-//                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                    startActivity(intent);
-//                    finish();
+                    Intent intent = new Intent(LoginActivity.this, EventsActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.putExtra("username", user.getDisplayName());
+                    startActivity(intent);
+                    finish();
                 }
             }
         };
         mSignUpTextView.setOnClickListener(this);
 
     }
+
 
     @Override
     public void onClick(View v) {
@@ -109,8 +111,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         String id = mAuth.getCurrentUser().getUid();
                         String uName = mAuth.getCurrentUser().getDisplayName();
                         DatabaseReference username = databaseUsers.child(id).child("username");
+
                         Intent intent = new Intent(LoginActivity.this, EventsActivity.class);
                         intent.putExtra("username", uName);
+
+
                         Log.d("namee",uName);
                         startActivity(intent);
                         if (!task.isSuccessful()) {

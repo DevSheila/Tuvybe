@@ -55,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         mSignUpButton.setOnClickListener(this);
         mSignInTextView.setOnClickListener(this);
-//        createAuthStateListener();
+        createAuthStateListener();
 
 
     }
@@ -164,7 +164,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
 //                            Log.d(TAG, user.getDisplayName());
-                            Toast.makeText(RegisterActivity.this, "The display name has been set", Toast.LENGTH_LONG).show();
+//                            Toast.makeText(RegisterActivity.this, "The display name has been set", Toast.LENGTH_LONG).show();
                         }
                     }
                 });

@@ -1,6 +1,8 @@
 package com.example.tuvybe.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tuvybe.R;
 import com.example.tuvybe.models.EventsSearchResponse;
+import com.example.tuvybe.ui.EventsDetailActivity;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -71,9 +76,6 @@ public class EventsListAdapter extends RecyclerView.Adapter<EventsListAdapter.Ev
             mEventTimeTextView.setText(event.getStart().getLocal());
             if (event.getOnlineEvent() == true) {
                 mOnlineTextView.setText("Online");
-            } else {
-                mOnlineTextView.setText("Venue :" + event.getVenueId().toString());
-
             }
 
 
@@ -81,7 +83,17 @@ public class EventsListAdapter extends RecyclerView.Adapter<EventsListAdapter.Ev
 
         @Override
         public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, EventsDetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("events", Parcels.wrap(mEventsList));
+            Log.i("click",itemPosition + "");
 
+//            for(int i=0;i<mEventsList.size();i++){
+//                Log.i("click",mEventsList.get(i).getName().toString());
+//            }
+
+            mContext.startActivity(intent);
         }
     }
 }

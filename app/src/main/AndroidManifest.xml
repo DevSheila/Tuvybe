@@ -27,6 +27,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.tuvybe.ui.LoginActivity" />
         </activity>
+        <activity
+            android:name=".ui.EventsDetailActivity"
+            android:theme="@style/Theme.TuVybe">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.tuvybe.ui.EventsDetailActivity" />
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

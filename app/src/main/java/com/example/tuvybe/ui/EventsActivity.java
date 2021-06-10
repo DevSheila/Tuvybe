@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.example.tuvybe.R;
 import com.example.tuvybe.adapters.EventsListAdapter;
@@ -35,6 +37,9 @@ public class EventsActivity extends AppCompatActivity {
 
     private EventsSearchResponse mEventsSearchResponse;
     private List<EventsSearchResponse> eventsList = new ArrayList<>();
+    @BindView(R.id.usernameTextView)
+    TextView mUsernameTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,9 @@ public class EventsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_events);
         ButterKnife.bind(this);
 
+        Intent intent = getIntent();
+        String username = intent.getStringExtra("username");
+        mUsernameTextView.setText("Hello "+username);
 
         for (int i=0;i< eventsId.length; i++){
             EventsAPI client = EventsClient.getClient();

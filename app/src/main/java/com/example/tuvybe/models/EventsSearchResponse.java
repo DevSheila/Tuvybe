@@ -6,8 +6,10 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Generated;
+import org.parceler.Parcel;
 
-@Generated("jsonschema2pojo")
+//@Generated("jsonschema2pojo")
+@Parcel
 public class EventsSearchResponse {
 
     @SerializedName("name")
@@ -37,12 +39,12 @@ public class EventsSearchResponse {
     @SerializedName("published")
     @Expose
     private String published;
-    @SerializedName("capacity")
-    @Expose
-    private Object capacity;
-    @SerializedName("capacity_is_custom")
-    @Expose
-    private Object capacityIsCustom;
+//    @SerializedName("capacity")
+//    @Expose
+//    private Object capacity;
+//    @SerializedName("capacity_is_custom")
+//    @Expose
+//    private Object capacityIsCustom;
     @SerializedName("status")
     @Expose
     private String status;
@@ -103,9 +105,9 @@ public class EventsSearchResponse {
     @SerializedName("is_free")
     @Expose
     private Boolean isFree;
-    @SerializedName("version")
-    @Expose
-    private Object version;
+//    @SerializedName("version")
+//    @Expose
+//    private Object version;
     @SerializedName("summary")
     @Expose
     private String summary;
@@ -115,9 +117,9 @@ public class EventsSearchResponse {
     @SerializedName("organizer_id")
     @Expose
     private String organizerId;
-    @SerializedName("venue_id")
-    @Expose
-    private Object venueId;
+//    @SerializedName("venue_id")
+//    @Expose
+//    private Object venueId;
     @SerializedName("category_id")
     @Expose
     private String categoryId;
@@ -160,21 +162,21 @@ public class EventsSearchResponse {
      * @param source
      * @param locale
      * @param seriesId
-     * @param capacity
+//     * @param capacity
      * @param organizationId
      * @param privacySetting
      * @param organizerId
      * @param txTimeLimit
      * @param isFree
      * @param isLocked
-     * @param venueId
+//     * @param venueId
      * @param subcategoryId
      * @param logo
      * @param end
      * @param currency
      * @param id
      * @param summary
-     * @param capacityIsCustom
+//     * @param capacityIsCustom
      * @param inventoryType
      * @param created
      * @param isExternallyTicketed
@@ -183,7 +185,7 @@ public class EventsSearchResponse {
      * @param showColorsInSeatmapThumbnail
      * @param published
      * @param resourceUri
-     * @param version
+//     * @param version
      * @param url
      * @param isSeries
      * @param formatId
@@ -197,7 +199,7 @@ public class EventsSearchResponse {
      * @param changed
      * @param status
      */
-    public EventsSearchResponse(Name name, Description description, String url, Start start, End end, String organizationId, String created, String changed, String published, Object capacity, Object capacityIsCustom, String status, String currency, Boolean listed, Boolean shareable, Boolean onlineEvent, Integer txTimeLimit, Boolean hideStartDate, Boolean hideEndDate, String locale, Boolean isLocked, String privacySetting, Boolean isSeries, Boolean isSeriesParent, String inventoryType, Boolean isReservedSeating, Boolean showPickASeat, Boolean showSeatmapThumbnail, Boolean showColorsInSeatmapThumbnail, String source, Boolean isFree, Object version, String summary, String logoId, String organizerId, Object venueId, String categoryId, String subcategoryId, String formatId, String id, String resourceUri, Boolean isExternallyTicketed, String seriesId, Logo logo) {
+    public EventsSearchResponse(Name name, Description description, String url, Start start, End end, String organizationId, String created, String changed, String published,  String status, String currency, Boolean listed, Boolean shareable, Boolean onlineEvent, Integer txTimeLimit, Boolean hideStartDate, Boolean hideEndDate, String locale, Boolean isLocked, String privacySetting, Boolean isSeries, Boolean isSeriesParent, String inventoryType, Boolean isReservedSeating, Boolean showPickASeat, Boolean showSeatmapThumbnail, Boolean showColorsInSeatmapThumbnail, String source, Boolean isFree, String summary, String logoId, String organizerId, String categoryId, String subcategoryId, String formatId, String id, String resourceUri, Boolean isExternallyTicketed, String seriesId, Logo logo) {
         super();
         this.name = name;
         this.description = description;
@@ -208,8 +210,8 @@ public class EventsSearchResponse {
         this.created = created;
         this.changed = changed;
         this.published = published;
-        this.capacity = capacity;
-        this.capacityIsCustom = capacityIsCustom;
+//        this.capacity = capacity;
+//        this.capacityIsCustom = capacityIsCustom;
         this.status = status;
         this.currency = currency;
         this.listed = listed;
@@ -230,11 +232,11 @@ public class EventsSearchResponse {
         this.showColorsInSeatmapThumbnail = showColorsInSeatmapThumbnail;
         this.source = source;
         this.isFree = isFree;
-        this.version = version;
+//        this.version = version;
         this.summary = summary;
         this.logoId = logoId;
         this.organizerId = organizerId;
-        this.venueId = venueId;
+//        this.venueId = venueId;
         this.categoryId = categoryId;
         this.subcategoryId = subcategoryId;
         this.formatId = formatId;
@@ -316,22 +318,22 @@ public class EventsSearchResponse {
     public void setPublished(String published) {
         this.published = published;
     }
+//
+//    public Object getCapacity() {
+//        return capacity;
+//    }
+//
+//    public void setCapacity(Object capacity) {
+//        this.capacity = capacity;
+//    }
 
-    public Object getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(Object capacity) {
-        this.capacity = capacity;
-    }
-
-    public Object getCapacityIsCustom() {
-        return capacityIsCustom;
-    }
-
-    public void setCapacityIsCustom(Object capacityIsCustom) {
-        this.capacityIsCustom = capacityIsCustom;
-    }
+//    public Object getCapacityIsCustom() {
+//        return capacityIsCustom;
+//    }
+//
+//    public void setCapacityIsCustom(Object capacityIsCustom) {
+//        this.capacityIsCustom = capacityIsCustom;
+//    }
 
     public String getStatus() {
         return status;
@@ -493,13 +495,13 @@ public class EventsSearchResponse {
         this.isFree = isFree;
     }
 
-    public Object getVersion() {
-        return version;
-    }
-
-    public void setVersion(Object version) {
-        this.version = version;
-    }
+//    public Object getVersion() {
+//        return version;
+//    }
+//
+//    public void setVersion(Object version) {
+//        this.version = version;
+//    }
 
     public String getSummary() {
         return summary;
@@ -525,13 +527,13 @@ public class EventsSearchResponse {
         this.organizerId = organizerId;
     }
 
-    public Object getVenueId() {
-        return venueId;
-    }
-
-    public void setVenueId(Object venueId) {
-        this.venueId = venueId;
-    }
+//    public Object getVenueId() {
+//        return venueId;
+//    }
+//
+//    public void setVenueId(Object venueId) {
+//        this.venueId = venueId;
+//    }
 
     public String getCategoryId() {
         return categoryId;
