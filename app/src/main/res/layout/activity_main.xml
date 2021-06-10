@@ -65,6 +65,7 @@
         android:layout_marginBottom="92dp"
         android:backgroundTint="#0AD698"
         android:fontFamily="@font/bangers"
+        android:textColor="@color/white"
         android:text="GET STARTED"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"

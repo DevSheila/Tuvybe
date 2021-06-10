@@ -57,6 +57,12 @@ public class EventsDetailFragment extends Fragment  implements View.OnClickListe
     TextView mEventTime;
     @BindView(R.id.addEventToFavourites)
     TextView mFavouritesLabel;
+    @BindView(R.id.viewOnEventBrite)
+    TextView mEventBriteLabel;
+    @BindView(R.id.viewSavedEvents)
+    TextView mSavedEvents;
+    @BindView(R.id.userTickets)
+    TextView mUserTickets;
     @BindView(R.id.attendButton) Button mAttendButton;
 
     private EventsSearchResponse mEvent;
@@ -99,8 +105,11 @@ public static EventsDetailFragment newInstance(EventsSearchResponse event) {
 
 
                 mEventTime.setText(mEvent.getStart().getLocal());
+                mEventBriteLabel.setOnClickListener(this);
                 mFavouritesLabel.setOnClickListener(this);
                 mAttendButton.setOnClickListener(this);
+                mSavedEvents.setOnClickListener(this);
+                mUserTickets.setOnClickListener(this);
 
                 return view;
         }
@@ -134,6 +143,20 @@ public static EventsDetailFragment newInstance(EventsSearchResponse event) {
             if(v == mAttendButton){
                 TicketsActivity exampleDialog = new TicketsActivity();
                 exampleDialog.show(getFragmentManager(),"example dialog");
+            }
+            if (v == mEventBriteLabel) {
+                Intent webIntent = new Intent(Intent.ACTION_VIEW,Uri.parse(mEvent.getUrl()));
+                startActivity(webIntent);
+            }
+            if (v == mSavedEvents) {
+                Intent intent = new Intent(requireContext(), SavedEventListActivity.class);
+
+                startActivity(intent);
+            }
+            if(v==mUserTickets){
+                Intent intent = new Intent(requireContext(), SavedTicketListActivity.class);
+
+                startActivity(intent);
             }
 
         }

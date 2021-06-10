@@ -80,6 +80,7 @@
         android:fontFamily="@font/bangers"
         android:text="Log In"
         android:textSize="20sp"
+        android:textColor="@color/white"
         app:backgroundTint="#0AD698"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.609"

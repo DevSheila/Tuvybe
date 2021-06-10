@@ -48,15 +48,15 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="45dp"
                 android:layout_marginRight="45dp"
+                android:ellipsize="end"
+                android:maxEms="40"
                 android:text="Yhjkhfjhf fhgfgf"
                 android:textColor="#D4000000"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                android:ellipsize="end"
-                android:maxEms="40"/>
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/addEventToFavourites"
@@ -86,10 +86,8 @@
             android:text=" Description"
             android:textColor="#D4000000"
             android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@+id/eventNameTextView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-            app:layout_constraintVertical_bias="0.279" />
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
         <TextView
 
@@ -98,19 +96,17 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="52dp"
             android:layout_marginEnd="184dp"
             android:layout_marginRight="184dp"
-            android:layout_marginBottom="40dp"
             android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
             android:text="  Details"
             android:textColor="#D4000000"
             android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
 
         <Button
             android:id="@+id/attendButton"
@@ -122,6 +118,7 @@
             android:background="@drawable/btn_bg"
             android:backgroundTint="#0AD698"
             android:text="Attend"
+            android:textColor="@color/white"
             android:textSize="10sp"
             app:backgroundTint="#0AD698"
             app:layout_constraintEnd_toEndOf="parent"
@@ -133,7 +130,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="42dp"
             android:layout_marginLeft="42dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="23dp"
             android:layout_marginEnd="60dp"
             android:layout_marginRight="60dp"
             android:drawableLeft="@drawable/ic_videocam"
@@ -145,30 +142,56 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/eventTime" />
 
+        <TextView
+            android:id="@+id/viewOnEventBrite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
 
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="228dp"
+            android:layout_marginRight="228dp"
+            android:drawableLeft="@drawable/ic_exit_to_app"
+            android:text="View On EventBrite"
+            android:textColor="#D4000000"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
+        <TextView
+            android:id="@+id/viewSavedEvents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="130dp"
+            android:layout_marginRight="130dp"
+            android:text="View Your Saved Events"
+            android:textColor="#D4000000"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.341"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewOnEventBrite" />
+
+        <TextView
+            android:id="@+id/userTickets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="291dp"
+            android:layout_marginRight="291dp"
+            android:text="View Tickets"
+            android:textColor="#D4000000"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewSavedEvents" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/attendButton"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        tools:listitem="@layout/ticket_list_item"
-
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="0dp"
-        android:paddingHorizontal="10dp">
-
-
-    </androidx.recyclerview.widget.RecyclerView>
 </FrameLayout>

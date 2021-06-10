@@ -24,6 +24,7 @@
 
         >
 
+
         <TextView
             android:id="@+id/userName"
             android:layout_width="wrap_content"
@@ -40,6 +41,15 @@
             android:text="Email"
             android:textColor="@color/black"
             android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/eventId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="event Id"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/numTickets"

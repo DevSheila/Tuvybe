@@ -7,6 +7,10 @@ public class Ticket {
     private String userEmail;
     private String eventId;
 
+    public Ticket() {
+
+
+    }
     public Ticket( String eventid,String num_tickets, String userId, String userName, String email) {
 
         this.num_tickets = num_tickets;

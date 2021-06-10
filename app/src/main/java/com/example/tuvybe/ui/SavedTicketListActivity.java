@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -15,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tuvybe.Constants;
 import com.example.tuvybe.R;
-import com.example.tuvybe.models.EventsSearchResponse;
+import com.example.tuvybe.models.Ticket;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,62 +25,60 @@ import com.google.firebase.database.FirebaseDatabase;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SavedEventListActivity extends AppCompatActivity {
-    private DatabaseReference mEventReference;
-    private FirebaseRecyclerAdapter<EventsSearchResponse, FirebaseEventViewHolder> mFirebaseAdapter;
+public class SavedTicketListActivity extends AppCompatActivity {
+    private DatabaseReference mTicketReference;
+    private FirebaseRecyclerAdapter<Ticket, FirebaseTicketViewHolder> mFirebaseAdapter;
     private FirebaseAuth mAuth;
+    private Ticket ticket;
 
-    @BindView(R.id.usernameTextView)TextView mUsernameTextView;
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
-    @BindView(R.id.errorTextView)
-    TextView mErrorTextView;
-    @BindView(R.id.linear3)
-    LinearLayout mEventsCategories;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_events);
+        setContentView(R.layout.activity_event_tickets);
         ButterKnife.bind(this);
 
-        mEventsCategories.setVisibility(View.GONE);
-        mUsernameTextView.setVisibility(View.GONE);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         String uid = user.getUid();
-        mEventReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_FAVOURITE_EVENTS).child(uid);
+        mTicketReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_TICKETS).child(uid);
+
 
         setUpFirebaseAdapter();
-        showEvents();
     }
+
+
     private void setUpFirebaseAdapter(){
 
 
-        FirebaseRecyclerOptions<EventsSearchResponse> options =
-                new FirebaseRecyclerOptions.Builder<EventsSearchResponse>()
-                        .setQuery(mEventReference, EventsSearchResponse.class)
+        FirebaseRecyclerOptions<Ticket> options =
+                new FirebaseRecyclerOptions.Builder<Ticket>()
+                        .setQuery(mTicketReference, Ticket.class)
                         .build();
 
 
-        mFirebaseAdapter = new FirebaseRecyclerAdapter<EventsSearchResponse, FirebaseEventViewHolder >(options) {
+        mFirebaseAdapter = new FirebaseRecyclerAdapter<Ticket, FirebaseTicketViewHolder>(options) {
 
             @Override
-            protected void onBindViewHolder(@NonNull FirebaseEventViewHolder firebaseEventViewHolder, int position, @NonNull EventsSearchResponse event) {
-                firebaseEventViewHolder.bindEvent(event);
+            protected void onBindViewHolder(@NonNull FirebaseTicketViewHolder firebaseTicketViewHolder, int position, @NonNull Ticket ticket) {
+                firebaseTicketViewHolder.bindReview(ticket);
             }
 
             @NonNull
             @Override
-            public FirebaseEventViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.events_list_item, parent, false);
-                return new FirebaseEventViewHolder(view);
+            public FirebaseTicketViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ticket_list_item, parent, false);
+                return new FirebaseTicketViewHolder(view);
             }
         };
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mFirebaseAdapter);
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -96,8 +93,6 @@ public class SavedEventListActivity extends AppCompatActivity {
         }
     }
 
-    private void showEvents() {
-        mRecyclerView.setVisibility(View.VISIBLE);
-    }
 
 }
+

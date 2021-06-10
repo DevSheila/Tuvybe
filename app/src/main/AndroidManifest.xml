@@ -17,7 +17,8 @@
         <activity
             android:name=".ui.RegisterActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +39,20 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.tuvybe.ui.EventsDetailActivity" />
         </activity>
-
+        <activity
+            android:name=".ui.SavedEventListActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.tuvybe.ui.SavedEventListActivity" />
+        </activity>
+        <activity
+            android:name=".ui.SavedTicketListActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.tuvybe.ui.SavedTicketListActivity" />
+        </activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -125,6 +125,7 @@
         android:background="@drawable/btn_bg"
         android:backgroundTint="#0AD698"
         android:fontFamily="@font/bangers"
+        android:textColor="@color/white"
         android:text="Sign Up"
         android:textSize="20sp"
         app:backgroundTint="#0AD698"
