@@ -14,12 +14,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tuvybe.R;
+import com.example.tuvybe.models.Ticket;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
+import java.util.List;
 import java.util.Objects;
 
 import butterknife.BindView;
@@ -44,6 +46,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     TextView mSignInTextView;
 
     private String mName;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

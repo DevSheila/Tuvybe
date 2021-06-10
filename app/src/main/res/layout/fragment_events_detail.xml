@@ -113,7 +113,7 @@
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
         <Button
-            android:id="@+id/signInButton"
+            android:id="@+id/attendButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="88dp"
@@ -145,5 +145,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/eventTime" />
 
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/attendButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        tools:listitem="@layout/ticket_list_item"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
+        android:paddingHorizontal="10dp">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
 </FrameLayout>

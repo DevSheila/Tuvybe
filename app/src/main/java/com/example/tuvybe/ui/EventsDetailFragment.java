@@ -24,6 +24,7 @@ import com.daimajia.androidanimations.library.YoYo;
 import com.example.tuvybe.Constants;
 import com.example.tuvybe.R;
 import com.example.tuvybe.models.EventsSearchResponse;
+import com.example.tuvybe.models.Ticket;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -45,7 +46,7 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class EventsDetailFragment extends Fragment implements View.OnClickListener {
+public class EventsDetailFragment extends Fragment  implements View.OnClickListener ,TicketsActivity.ExampleDialogListener{
     @BindView(R.id.eventImageView)
     ImageView mImageLabel;
     @BindView(R.id.eventNameTextView)
@@ -56,15 +57,16 @@ public class EventsDetailFragment extends Fragment implements View.OnClickListen
     TextView mEventTime;
     @BindView(R.id.addEventToFavourites)
     TextView mFavouritesLabel;
+    @BindView(R.id.attendButton) Button mAttendButton;
+
+    private EventsSearchResponse mEvent;
+    private Ticket mTicket;
+    private List<Ticket> mTicketsList;
 
 
+    public EventsDetailFragment(){
 
-        private EventsSearchResponse mEvent;
-
-
-public EventsDetailFragment(){
-
-        }
+    }
 
 public static EventsDetailFragment newInstance(EventsSearchResponse event) {
         EventsDetailFragment gameDetailFragment= new EventsDetailFragment();
@@ -98,6 +100,7 @@ public static EventsDetailFragment newInstance(EventsSearchResponse event) {
 
                 mEventTime.setText(mEvent.getStart().getLocal());
                 mFavouritesLabel.setOnClickListener(this);
+                mAttendButton.setOnClickListener(this);
 
                 return view;
         }
@@ -128,6 +131,16 @@ public static EventsDetailFragment newInstance(EventsSearchResponse event) {
                 Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
 
             }
+            if(v == mAttendButton){
+                TicketsActivity exampleDialog = new TicketsActivity();
+                exampleDialog.show(getFragmentManager(),"example dialog");
+            }
 
         }
+
+    @Override
+    public void applyText(String num_tickets) {
+//
+
+    }
 }
