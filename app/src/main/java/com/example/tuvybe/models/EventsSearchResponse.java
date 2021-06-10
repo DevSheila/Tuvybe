@@ -199,7 +199,11 @@ public class EventsSearchResponse {
      * @param changed
      * @param status
      */
-    public EventsSearchResponse(Name name, Description description, String url, Start start, End end, String organizationId, String created, String changed, String published,  String status, String currency, Boolean listed, Boolean shareable, Boolean onlineEvent, Integer txTimeLimit, Boolean hideStartDate, Boolean hideEndDate, String locale, Boolean isLocked, String privacySetting, Boolean isSeries, Boolean isSeriesParent, String inventoryType, Boolean isReservedSeating, Boolean showPickASeat, Boolean showSeatmapThumbnail, Boolean showColorsInSeatmapThumbnail, String source, Boolean isFree, String summary, String logoId, String organizerId, String categoryId, String subcategoryId, String formatId, String id, String resourceUri, Boolean isExternallyTicketed, String seriesId, Logo logo) {
+    private String pushId;
+
+
+
+    public EventsSearchResponse(Name name, Description description, String url, Start start, End end, String organizationId, String created, String changed, String published, String status, String currency, Boolean listed, Boolean shareable, Boolean onlineEvent, Integer txTimeLimit, Boolean hideStartDate, Boolean hideEndDate, String locale, Boolean isLocked, String privacySetting, Boolean isSeries, Boolean isSeriesParent, String inventoryType, Boolean isReservedSeating, Boolean showPickASeat, Boolean showSeatmapThumbnail, Boolean showColorsInSeatmapThumbnail, String source, Boolean isFree, String summary, String logoId, String organizerId, String categoryId, String subcategoryId, String formatId, String id, String resourceUri, Boolean isExternallyTicketed, String seriesId, Logo logo) {
         super();
         this.name = name;
         this.description = description;
@@ -598,5 +602,11 @@ public class EventsSearchResponse {
     public void setLogo(Logo logo) {
         this.logo = logo;
     }
+    public String getPushId() {
+        return pushId;
+    }
 
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
 }

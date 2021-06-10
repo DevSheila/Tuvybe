@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,11 +19,16 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+import com.example.tuvybe.Constants;
 import com.example.tuvybe.R;
 import com.example.tuvybe.models.EventsSearchResponse;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -48,6 +54,8 @@ public class EventsDetailFragment extends Fragment implements View.OnClickListen
     TextView mDescriptionLabel;
     @BindView(R.id.eventTime)
     TextView mEventTime;
+    @BindView(R.id.addEventToFavourites)
+    TextView mFavouritesLabel;
 
 
 
@@ -89,12 +97,37 @@ public static EventsDetailFragment newInstance(EventsSearchResponse event) {
 
 
                 mEventTime.setText(mEvent.getStart().getLocal());
+                mFavouritesLabel.setOnClickListener(this);
 
                 return view;
         }
 
         @Override
         public void onClick(View v) {
+            if(v == mFavouritesLabel){
+
+
+                YoYo.with(Techniques.Tada)
+                        .duration(700)
+                        .repeat(1)
+                        .playOn(mFavouritesLabel);
+
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                String uid = user.getUid();
+                DatabaseReference eventsRef = FirebaseDatabase
+                        .getInstance()
+                        .getReference(Constants.FIREBASE_FAVOURITE_EVENTS)
+                        .child(uid);
+
+                DatabaseReference pushRef = eventsRef.push();
+                String pushId = pushRef.getKey();
+                mEvent.setPushId(pushId);
+                pushRef.setValue(mEvent);
+
+                Log.i("fav click","item clicked"+pushId);
+                Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+
+            }
 
         }
 }
