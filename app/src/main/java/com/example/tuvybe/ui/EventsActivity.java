@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -33,14 +34,22 @@ import retrofit2.Response;
 
 import static com.example.tuvybe.Constants.EVENT_API_KEY;
 
-public class EventsActivity extends AppCompatActivity {
+public class EventsActivity extends AppCompatActivity implements View.OnClickListener {
 
+    @BindView(R.id.all)TextView mAll;
+
+    @BindView(R.id.music)TextView mMusic;
+    @BindView(R.id.business)TextView mBusiness;
+    @BindView(R.id.tech)TextView mTech;
+    @BindView(R.id.arts)TextView mArts;
+    @BindView(R.id.food)TextView mFood;
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
     private EventsListAdapter mAdapter;
 
 
-    private String[] eventsId = new String[]{"153504196183","115430197829","156742457911","153685608793","158192906241","154031360947","154772080459","151248804245","151172405735","63049080497","152141827301","143791601551","156939948611","151937774975"};
+
+    private String[] eventsId = new String[]{"153504196183","115430197829","156742457911","153685608793","158192906241","154031360947","154772080459","151248804245","151172405735","63049080497","152141827301","143791601551","156939948611","151937774975","158364475409","158871646371","63166502710","870138196771","143850844749","157692353073"};
 
     private EventsSearchResponse mEventsSearchResponse;
     private List<EventsSearchResponse> eventsList = new ArrayList<>();
@@ -57,6 +66,13 @@ public class EventsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String username = intent.getStringExtra("username");
         mUsernameTextView.setText("Hello "+username);
+
+        mMusic.setOnClickListener(this);
+        mFood.setOnClickListener(this);
+        mBusiness.setOnClickListener(this);
+        mArts.setOnClickListener(this);
+        mTech.setOnClickListener(this);
+        mAll.setOnClickListener(this);
 
 
         for (int i=0;i< eventsId.length; i++){
@@ -149,4 +165,61 @@ public class EventsActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+    public void sortByCategoryName(String categoryId) {
+        List<EventsSearchResponse> foundEvents = new ArrayList<>() ;
+
+       if(categoryId != null){
+           for (int i = 0; i < eventsList.size(); i++) {
+
+               if (eventsList.get(i).getCategoryId().equals(categoryId)) {
+                   foundEvents.add(eventsList.get(i));
+               }
+           }
+       }if(categoryId == ""){
+            for (int i = 0; i < eventsList.size(); i++) {
+                    foundEvents.add(eventsList.get(i));
+
+            }
+        }
+
+
+        Log.i("events", (eventsList.size() +""));
+        mAdapter = new EventsListAdapter(EventsActivity.this, foundEvents);
+        mRecyclerView.setAdapter(mAdapter);
+        RecyclerView.LayoutManager layoutManager =new LinearLayoutManager(EventsActivity.this);
+        mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.setHasFixedSize(true);
+    }
+
+    @Override
+    public void onClick(View v) {
+        String categoryId;
+        if(v == mAll){
+            categoryId = "";
+            sortByCategoryName(categoryId);
+        }
+        if(v == mMusic){
+            categoryId = "103";
+            sortByCategoryName(categoryId);
+        }
+        if(v == mFood){
+            categoryId = "110";
+            sortByCategoryName(categoryId);
+        }
+        if(v == mBusiness){
+            categoryId = "101";
+            sortByCategoryName(categoryId);
+        }
+        if(v == mArts){
+            categoryId = "105";
+            sortByCategoryName(categoryId);
+        }
+        if(v == mTech){
+            categoryId = "102";
+            sortByCategoryName(categoryId);
+        }
+
+    }
+
+
 }

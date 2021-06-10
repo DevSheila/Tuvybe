@@ -18,6 +18,9 @@
         android:text="Hello,"
         android:textSize="14sp"
         />
+
+
+
     <LinearLayout
         android:id="@+id/linear3"
 
@@ -28,14 +31,24 @@
         android:layout_below="@+id/usernameTextView"
         >
         <TextView
-            android:id="@+id/Any"
+            android:id="@+id/all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Any"
+            android:text="All"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:padding="10dp"
+            android:padding="5dp"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:id="@+id/music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Music"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:padding="5dp"
             android:layout_marginBottom="10dp"/>
         <TextView
             android:id="@+id/tech"
@@ -45,7 +58,7 @@
             android:textColor="@color/black"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:padding="10dp"
+            android:padding="5dp"
             android:layout_marginBottom="10dp"/>
 
         <TextView
@@ -56,7 +69,7 @@
             android:textColor="@color/black"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:padding="10dp"
+            android:padding="5dp"
             android:layout_marginBottom="10dp"/>
         <TextView
             android:id="@+id/business"
@@ -84,6 +97,7 @@
 
 
     </LinearLayout>
+
 
 
     <androidx.recyclerview.widget.RecyclerView
