@@ -32,7 +32,6 @@ public class SavedEventListActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     @BindView(R.id.usernameTextView)TextView mUsernameTextView;
-    LinearLayout mFilterCategories;
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
     @BindView(R.id.errorTextView)
@@ -41,11 +40,9 @@ public class SavedEventListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_events);
+        setContentView(R.layout.fragment_events_detail);
         ButterKnife.bind(this);
 
-        mUsernameTextView.setText("Favourites");
-        mFilterCategories.setVisibility(View.GONE);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         String uid = user.getUid();
