@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +37,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     EditText mUserPassword;
     @BindView(R.id.signInButton)
     Button mSignInButton;
+    @BindView(R.id.firebaseProgressBar)
+    ProgressBar mSignInProgressBar;
+    @BindView(R.id.loadingTextView) TextView mLoadingSignUp;
 
     //animation variables
     Animation topAnim, bottomAnim;
@@ -49,7 +53,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        ButterKnife.bind(this);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -69,7 +72,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
             }
         };
+        ButterKnife.bind(this);
         mSignUpTextView.setOnClickListener(this);
+        mSignInButton.setOnClickListener(this);
 
     }
 
@@ -84,6 +89,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
         if(v== mSignInButton){
             loginWithPassword();
+            showProgressBar();
         }
     }
 
@@ -103,6 +109,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        hideProgressBar();
                         Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
                         Toast.makeText(LoginActivity.this, "Login Successful",
                                 Toast.LENGTH_SHORT).show();
@@ -139,5 +146,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
+    }
+    private void showProgressBar() {
+        mSignInProgressBar.setVisibility(View.VISIBLE);
+        mLoadingSignUp.setVisibility(View.VISIBLE);
+        mLoadingSignUp.setText("Log in you in");
+    }
+
+    private void hideProgressBar() {
+        mSignInProgressBar.setVisibility(View.GONE);
+        mLoadingSignUp.setVisibility(View.GONE);
     }
 }

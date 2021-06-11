@@ -10,6 +10,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +45,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     Button mSignUpButton;
     @BindView(R.id.signInTextView)
     TextView mSignInTextView;
+    @BindView(R.id.firebaseProgressBar)
+    ProgressBar mSignInProgressBar;
+    @BindView(R.id.loadingTextView)
+    TextView mLoadingSignUp;
 
     private String mName;
 
@@ -92,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         boolean validPassword = isValidPassword(password, confirmPassword);
         if (!validEmail || !validName || !validPassword) return;
 
-
+        showProgressBar();
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
             if (task.isSuccessful()) {
 
@@ -103,7 +108,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 Toast.makeText(RegisterActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(RegisterActivity.this, EventsActivity.class);
-//                intent.putExtra("username",name );
+                intent.putExtra("username",mName );
                 startActivity(intent);
             } else {
                 Toast.makeText(RegisterActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
@@ -156,6 +161,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         return true;
     }
 
+    private void showProgressBar() {
+        mSignInProgressBar.setVisibility(View.VISIBLE);
+        mLoadingSignUp.setVisibility(View.VISIBLE);
+        mLoadingSignUp.setText("Sign Up process in Progress");
+    }
+
+    private void hideProgressBar() {
+        mSignInProgressBar.setVisibility(View.GONE);
+        mLoadingSignUp.setVisibility(View.GONE);
+    }
 
     private void createFirebaseUserProfile(final FirebaseUser user) {
         UserProfileChangeRequest addProfileName = new UserProfileChangeRequest.Builder()
@@ -166,6 +181,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
+                        hideProgressBar();
                         if (task.isSuccessful()) {
 //                            Log.d(TAG, user.getDisplayName());
 //                            Toast.makeText(RegisterActivity.this, "The display name has been set", Toast.LENGTH_LONG).show();
